@@ -1,6 +1,6 @@
-package autolens;
+package autolensext;
 
-import lib.Lens;
+import me.tatarka.lens.Lens;
 
 public class Main {
 
@@ -23,10 +23,10 @@ public class Main {
 
     // Can be done once, reduces boilerplate everywhere else
     private static Lens<Employee, String> createEmployeeCompanyStreetNameLens() {
-        return Lens.of(Employee::company, Employee::withCompany)
-            .compose(Lens.of(Company::address, Company::withAddress))
-            .compose(Lens.of(Address::street, Address::withStreet))
-            .compose(Lens.of(Street::name, Street::withName));
+        return Employee.lenses().company()
+            .andThen(Company.lenses().address())
+            .andThen(Address.lenses().street())
+            .andThen(Street.lenses().name());
     }
 
     private static Employee createEmployee() {

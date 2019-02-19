@@ -111,6 +111,23 @@
         </dependency>
 
         <dependency>
+            <groupId>me.tatarka.lens</groupId>
+            <artifactId>auto-value-lens</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.tatarka.lens</groupId>
+            <artifactId>lens</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>me.tatarka.lens</groupId>
+            <artifactId>auto-value-lens-annotations</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
@@ -132,5 +149,12 @@
             <version>${arrow.version}</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
 
 </project>
