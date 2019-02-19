@@ -22,7 +22,7 @@ It can be easily automated using code-generation. It's worth nothing that this s
 As can be seen in the `Entities.java`, the boilerplate is now considerably smaller. This is achieved using [Google AutoValue](https://github.com/google/auto/tree/master/value) plus the [With Extension](https://github.com/gabrielittner/auto-value-with) that generates the immutable equivalent of setters for us. We get concrete implementations including `equals`, `hashCode` and `toString` for free.
 The respective `Main.java` does not look very different from the previous version. This also demonstrates that if for some reason AutoValue should not be used anymore, it is easy to replace with manual implementations without breaking use-sites.
 
-_Sidenote_: AutoValue extensions don't seem to require a lot of code ([example](https://github.com/gabrielittner/auto-value-with/tree/master/auto-value-with/src/main/java/com/gabrielittner/auto/value/with)). Due to this, it could even be feasible to write an extension that automatically generates lenses.
+_Sidenote_: There is an [AutoValue extension](https://github.com/evant/auto-value-lens) to automatically generate lenses. Unfortunately it is slightly outdated and causes a compilation error, but fixing it would be very straightforward.
 
 ## Option 3: Kotlin + code generation
 

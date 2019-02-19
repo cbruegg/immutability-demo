@@ -4,10 +4,6 @@ import lib.Lens;
 
 public class Main {
 
-    // TODO Writing AutoValue plugins seems fairly straightforward. We could even consider
-    //      writing an own plugin that generates the Lenses for us.
-    //      https://github.com/gabrielittner/auto-value-with/tree/master/auto-value-with/src/main/java/com/gabrielittner/auto/value/with
-
     public static void main(String[] args) {
         Employee employee = createEmployee();
 
