@@ -9,7 +9,7 @@ The advantage of lenses is that they can be composed, which is very useful for d
 
 ## Option 1: Java + Manual entity definition
 
-There is no need to use a library for lenses. The file `Lens.java` in the package `manuallens` contains a sufficient implementation in less than 50 lines of code.
+There is no need to use a library for lenses. The file `Lens.java` in the package `lens` contains a sufficient implementation in less than 50 lines of code.
 The package `manuallens` contains an example for how to use lenses without any library support. Inside `Entities.java`, we have definitions of our immutable entities with concrete implementations of the aforementioned getters and setters.
 
 The file `Main.java` demonstrates the usage. It should already be obvious that lenses avoid boilerplate, since lenses can be reused and their use-site code is minimal.
