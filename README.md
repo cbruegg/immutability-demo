@@ -9,7 +9,7 @@ The advantage of lenses is that they can be composed, which is very useful for d
 
 ## Option 1: Java + Manual entity definition
 
-There is no need to use a library for lenses. The file `Lens.java` contains a sufficient implementation in less than 50 lines of code.
+There is no need to use a library for lenses. The file `Lens.java` in the package `manuallens` contains a sufficient implementation in less than 50 lines of code.
 The package `manuallens` contains an example for how to use lenses without any library support. Inside `Entities.java`, we have definitions of our immutable entities with concrete implementations of the aforementioned getters and setters.
 
 The file `Main.java` demonstrates the usage. It should already be obvious that lenses avoid boilerplate, since lenses can be reused and their use-site code is minimal.
@@ -19,7 +19,7 @@ The file `Main.java` demonstrates the usage. It should already be obvious that l
 The majority of boilerplate in _Option 1_ stems from the implementation of entity classes. Maintaining the implementations of many getters, setters, `equals`, `hashCode`, etc. is time-consuming and error-prone.
 It can be easily automated using code-generation. It's worth nothing that this step doesn't involve any dangerous bytecode rewriting. Instead, this approach relies on annotation processing: We add an annotation to a Java class and an annotation processor will generate more Java code based on the class contents that is then compiled alongside with the manually-written code. There is no magic involved.
 
-As can be seen in the `Entities.java`, the boilerplate is now considerably smaller. This is achieved using [Google AutoValue](https://github.com/google/auto/tree/master/value) plus the [With Extension](https://github.com/gabrielittner/auto-value-with) that generates the immutable equivalent of setters for us. We get concrete implementations including `equals`, `hashCode` and `toString` for free.
+As can be seen in the `Entities.java` in the package `autolens`, the boilerplate is now considerably smaller. This is achieved using [Google AutoValue](https://github.com/google/auto/tree/master/value) plus the [With Extension](https://github.com/gabrielittner/auto-value-with) that generates the immutable equivalent of setters for us. We get concrete implementations including `equals`, `hashCode` and `toString` for free.
 The respective `Main.java` does not look very different from the previous version. This also demonstrates that if for some reason AutoValue should not be used anymore, it is easy to replace with manual implementations without breaking use-sites.
 
 _Sidenote_: There is an [AutoValue extension](https://github.com/evant/auto-value-lens) to automatically generate lenses. Unfortunately it is slightly outdated and causes a compilation error, but fixing it would be very straightforward.
