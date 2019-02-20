@@ -31,4 +31,4 @@ Using Kotlin, we can cut this in half. This makes data classes easier to write, 
 
 On top of this, we're using the [Arrow-Kt](https://arrow-kt.io/docs/optics/lens/#composition) library to generate the lenses for us using a similar code-generation approach as in _Option 2_. Thus, we don't need to manually specify any lenses anymore. The more lenses are used in an application, the more useful this advantage becomes.
 
-In this option, we've simplified both the entity definitions in `Entity.Kt` and the usage in `Main.kt`.
+In this option, we've simplified both the entity definitions in `Entity.kt` and the usage in `Main.kt`.
