@@ -16,8 +16,8 @@ public class Main {
         );
 
         // Lens way
-        Lens<Employee, String> createEmployeeCompanyStreetNameLens = createEmployeeCompanyStreetNameLens();
-        Employee autoModifiedEmployee = createEmployeeCompanyStreetNameLens.set(employee, "Teststreet 2");
+        Lens<Employee, String> employeeCompanyStreetNameLens = createEmployeeCompanyStreetNameLens();
+        Employee autoModifiedEmployee = employeeCompanyStreetNameLens.set(employee, "Teststreet 2");
     }
 
     // Can be done once, reduces boilerplate everywhere else
